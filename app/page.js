@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function HomePage() {
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
 
   const handleToggle = () => {
     setIsPaused((prevState) => !prevState);
