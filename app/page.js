@@ -60,10 +60,25 @@ export default function HomePage() {
         />
       );
     }
+
+    // Add percentage text after the last tile
+    tiles.push(
+      <text
+        key="percentage"
+        x={totalTiles * (tileSize + gap) + 10} // Increased space by 10px
+        y={tileSize / 2}
+        dy="0.35em"
+        className="progress-percentage"
+        textAnchor="start"
+      >
+        {`${Math.round(progress)}`} {/* Removed the percentage symbol */}
+      </text>
+    );
+
     return tiles;
   };
 
-  const svgWidth = totalTiles * (tileSize + gap) - gap; // Calculate total width
+  const svgWidth = totalTiles * (tileSize + gap) + 50; // Increased width to accommodate percentage text
 
   return (
     <>

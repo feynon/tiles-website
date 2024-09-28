@@ -11,7 +11,7 @@ body {
   flex-direction: column;
 }
 .header {
-  padding: 40px 0 20px 40px; /* Make top and left padding equal */
+  padding: 40px; /* Set uniform padding on all sides for equal spacing */
 }
 .logo {
   width: 280px; /* Adjusted width to maintain proportions */
@@ -218,5 +218,23 @@ footer p {
   
   .toggle-button.play::before {
     border-width: 11px 0 11px 19px;
+  }
+}
+
+.progress-percentage {
+  font-size: 20px; /* Increased font size */
+  fill: #ff0000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .progress-percentage {
+    font-size: 16px; /* Increased font size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-percentage {
+    font-size: 14px; /* Increased font size for small screens */
   }
 }
