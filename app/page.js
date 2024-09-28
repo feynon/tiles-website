@@ -80,11 +80,11 @@ export default function HomePage() {
           AI inference engine built with Rust, WebAssembly, and WebGPU, demoed
           using{' '}
           <a
-            href="https://azure.microsoft.com/en-us/blog/introducing-phi-3-redefining-whats-possible-with-slms/"
+            href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Phi 3
+            Llama 3.2 3B
           </a>{' '}
           and{' '}
           <a
