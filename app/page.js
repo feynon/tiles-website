@@ -21,7 +21,7 @@ export default function HomePage() {
           }
           return newProgress;
         });
-      }, 100);
+      }, 200); // Changed from 100ms to 200ms for a 20-second duration
     }
     return () => clearInterval(interval);
   }, [isPaused, progress]);
