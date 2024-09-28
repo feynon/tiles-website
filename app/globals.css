@@ -222,19 +222,19 @@ footer p {
 }
 
 .progress-percentage {
-  font-size: 20px; /* Increased font size */
+  font-size: 24px; /* Increased font size but smaller than the cube size */
   fill: #ff0000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 @media (max-width: 768px) {
   .progress-percentage {
-    font-size: 16px; /* Increased font size for medium screens */
+    font-size: 20px; /* Adjusted font size for medium screens */
   }
 }
 
 @media (max-width: 480px) {
   .progress-percentage {
-    font-size: 14px; /* Increased font size for small screens */
+    font-size: 18px; /* Adjusted font size for small screens */
   }
 }
