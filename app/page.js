@@ -1,14 +1,69 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   const [isPaused, setIsPaused] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [activeTiles, setActiveTiles] = useState(0);
+  const [displayNumber, setDisplayNumber] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    if (!isPaused && progress < 100) {
+      interval = setInterval(() => {
+        setProgress(prev => {
+          const newProgress = Math.min(prev + 1, 100);
+          setActiveTiles(Math.floor(newProgress / (100 / totalTiles)));
+          // Only set displayNumber to 30 when progress reaches 100%
+          if (newProgress === 100) {
+            setDisplayNumber(30);
+          }
+          return newProgress;
+        });
+      }, 100);
+    }
+    return () => clearInterval(interval);
+  }, [isPaused, progress]);
 
   const handleToggle = () => {
     setIsPaused((prevState) => !prevState);
+    if (isPaused) {
+      // Reset progress and display number when starting
+      setProgress(0);
+      setDisplayNumber(0);
+    }
     console.log(isPaused ? 'Resumed' : 'Paused');
   };
+
+  const totalTiles = 10; // Changed from 15 to 10
+  const tileSize = 28; // Define a constant for tile size
+  const gap = 2; // Define a small gap between tiles
+
+  const generateTiles = () => {
+    const tiles = [];
+
+    for (let i = 0; i < totalTiles; i++) {
+      const isActive = i < activeTiles;
+      const opacity = isActive ? 1 : 0.2;
+      const hue = 0; // Red hue
+      const lightness = 50 + (50 - (i / (totalTiles - 1)) * 50); // Range from 100% to 50%
+      tiles.push(
+        <rect
+          key={i}
+          className="tile"
+          x={i * (tileSize + gap)}
+          y="0"
+          width={tileSize}
+          height={tileSize}
+          fill={`hsla(${hue}, 100%, ${lightness}%, ${opacity})`}
+        />
+      );
+    }
+    return tiles;
+  };
+
+  const svgWidth = totalTiles * (tileSize + gap) - gap; // Calculate total width
 
   return (
     <>
@@ -16,57 +71,15 @@ export default function HomePage() {
         <svg
           className="logo"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 300 100"
-          aria-label="Tiles Logo"
+          viewBox={`0 0 ${svgWidth} ${tileSize}`}
+          aria-label="Download Progress"
         >
-          <rect width="300" height="100" fill="#ffffff" />
-          <g transform="translate(10, 25)">
-            <rect
-              className="tile"
-              x="0"
-              y="0"
-              width="20"
-              height="20"
-              fill="#ff0000"
-            />
-            <rect
-              className="tile"
-              x="25"
-              y="0"
-              width="20"
-              height="20"
-              fill="#ff3333"
-            />
-            <rect
-              className="tile"
-              x="50"
-              y="0"
-              width="20"
-              height="20"
-              fill="#ff6666"
-            />
-            <rect
-              className="tile"
-              x="75"
-              y="0"
-              width="20"
-              height="20"
-              fill="#ff9999"
-            />
-            <rect
-              className="tile"
-              x="100"
-              y="0"
-              width="20"
-              height="20"
-              fill="#ffcccc"
-            />
-          </g>
+          <g>{generateTiles()}</g>
         </svg>
       </header>
       <main className="content">
         <div className="speed-display" aria-label="Token processing speed">
-          30
+          {displayNumber}
         </div>
         <div className="unit">tokens/second</div>
         <button
