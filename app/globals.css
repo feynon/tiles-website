@@ -129,6 +129,15 @@ footer p {
   transition: background-color 0.3s ease;
   padding: 0;
   overflow: hidden;
+  outline: none; /* Remove focus outline */
+}
+
+.toggle-button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.toggle-button:active {
+  background-color: #ffffff; /* Keep background white when pressed */
 }
 
 .toggle-button::before,
@@ -172,7 +181,7 @@ footer p {
 }
 
 .toggle-button:hover {
-  background-color: #fff0f0;
+  background-color: #ffffff; /* Keep background white on hover */
 }
 
 @media (max-width: 768px) {
