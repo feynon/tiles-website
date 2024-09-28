@@ -1,23 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function HomePage() {
-  useEffect(() => {
-    const pauseButton = document.querySelector('.pause-button');
-    if (pauseButton) {
-      pauseButton.addEventListener('click', () => {
-        // Add your JavaScript functionality here
-        console.log('Pause button clicked');
-      });
-    }
-    // Cleanup event listener on component unmount
-    return () => {
-      if (pauseButton) {
-        pauseButton.removeEventListener('click', () => {});
-      }
-    };
-  }, []);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleToggle = () => {
+    setIsPaused((prevState) => !prevState);
+    console.log(isPaused ? 'Resumed' : 'Paused');
+  };
 
   return (
     <>
@@ -78,12 +69,11 @@ export default function HomePage() {
           30
         </div>
         <div className="unit">tokens/second</div>
-        <div
-          className="pause-button"
-          aria-label="Pause button"
-          role="button"
-          tabIndex="0"
-        ></div>
+        <button
+          className={`toggle-button ${isPaused ? 'play' : 'pause'}`}
+          aria-label={isPaused ? "Play button" : "Pause button"}
+          onClick={handleToggle}
+        ></button>
       </main>
       <footer>
         <p>
