@@ -119,15 +119,16 @@ footer p {
 }
 
 .toggle-button {
-  width: 60px;
-  height: 60px;
-  border: none;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #ff0000;
   border-radius: 50%;
-  background-color: #ff0000;
+  background-color: #ffffff;
   cursor: pointer;
   position: relative;
   transition: background-color 0.3s ease;
   padding: 0;
+  overflow: hidden;
 }
 
 .toggle-button::before,
@@ -136,67 +137,74 @@ footer p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  background-color: #ff0000;
   transition: all 0.3s ease;
 }
 
 .toggle-button.pause::before,
 .toggle-button.pause::after {
-  width: 6px;
-  height: 22px;
+  width: 8px;
+  height: 30px;
 }
 
 .toggle-button.pause::before {
-  transform: translate(calc(-50% - 5px), -50%);
+  transform: translate(-10px, -50%);
 }
 
 .toggle-button.pause::after {
-  transform: translate(calc(-50% + 5px), -50%);
+  transform: translate(2px, -50%);
 }
 
 .toggle-button.play::before {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 11px 0 11px 22px;
-  border-color: transparent transparent transparent #ffffff;
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #ff0000;
   background-color: transparent;
   transform: translate(-40%, -50%);
 }
 
+.toggle-button.play::after {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
 .toggle-button:hover {
-  background-color: #ff3333;
+  background-color: #fff0f0;
 }
 
 @media (max-width: 768px) {
   .toggle-button {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
   }
   
   .toggle-button.pause::before,
   .toggle-button.pause::after {
-    height: 18px;
+    width: 7px;
+    height: 26px;
   }
   
   .toggle-button.play::before {
-    border-width: 9px 0 9px 18px;
+    border-width: 13px 0 13px 22px;
   }
 }
 
 @media (max-width: 480px) {
   .toggle-button {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
   
   .toggle-button.pause::before,
   .toggle-button.pause::after {
-    height: 14px;
+    width: 6px;
+    height: 22px;
   }
   
   .toggle-button.play::before {
-    border-width: 7px 0 7px 14px;
+    border-width: 11px 0 11px 19px;
   }
 }
