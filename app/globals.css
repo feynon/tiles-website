@@ -235,6 +235,6 @@ footer p {
 
 @media (max-width: 480px) {
   .progress-percentage {
-    font-size: 18px; /* Adjusted font size for small screens */
+    font-size: 22px; /* Increased font size for small screens */
   }
 }
