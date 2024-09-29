@@ -136,7 +136,7 @@ export default function HomePage() {
           .
         </p>
         <p>
-          Work in progress concept, designed by{' '}
+          Work in progress foundational technologies, designed for an intelligence age browser by{' '}
           <a
             href="https://ankeshbharti.com/"
             target="_blank"
