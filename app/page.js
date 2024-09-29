@@ -125,14 +125,6 @@ export default function HomePage() {
           >
             Llama 3.2 3B
           </a>{' '}
-          and{' '}
-          <a
-            href="https://github.com/huggingface/ratchet"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ratchet
-          </a>
           .
         </p>
         <p>
