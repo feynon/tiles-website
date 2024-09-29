@@ -136,7 +136,7 @@ export default function HomePage() {
           .
         </p>
         <p>
-          Work in progress, designed by{' '}
+          Work in progress concept, designed by{' '}
           <a
             href="https://ankeshbharti.com/"
             target="_blank"
