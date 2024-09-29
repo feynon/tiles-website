@@ -7,6 +7,7 @@ export default function HomePage() {
   const [progress, setProgress] = useState(0);
   const [activeTiles, setActiveTiles] = useState(0);
   const [displayNumber, setDisplayNumber] = useState(0);
+  const [hasCompleted, setHasCompleted] = useState(false); // New state to track completion
 
   useEffect(() => {
     let interval;
@@ -15,30 +16,40 @@ export default function HomePage() {
         setProgress(prev => {
           const newProgress = Math.min(prev + 1, 100);
           setActiveTiles(Math.floor(newProgress / (100 / totalTiles)));
-          // Only set displayNumber to 30 when progress reaches 100%
+          
           if (newProgress === 100) {
             setDisplayNumber(30);
+            setHasCompleted(true); // Mark as completed
           }
+          
           return newProgress;
         });
-      }, 200); // Changed from 100ms to 200ms for a 20-second duration
+      }, 200); // 20-second duration
     }
     return () => clearInterval(interval);
   }, [isPaused, progress]);
 
   const handleToggle = () => {
-    setIsPaused((prevState) => !prevState);
-    if (isPaused) {
-      // Reset progress and display number when starting
-      setProgress(0);
-      setDisplayNumber(0);
-    }
+    setIsPaused(prevState => {
+      const newPausedState = !prevState;
+
+      if (!newPausedState && hasCompleted) {
+        // Resuming after completion: keep displayNumber at 30
+        setDisplayNumber(30);
+      } else if (newPausedState && hasCompleted) {
+        // Pausing after completion: reset displayNumber to 0
+        setDisplayNumber(0);
+      }
+
+      return newPausedState;
+    });
+
     console.log(isPaused ? 'Resumed' : 'Paused');
   };
 
-  const totalTiles = 10; // Changed from 15 to 10
-  const tileSize = 28; // Define a constant for tile size
-  const gap = 2; // Define a small gap between tiles
+  const totalTiles = 10;
+  const tileSize = 28;
+  const gap = 2;
 
   const generateTiles = () => {
     const tiles = [];
