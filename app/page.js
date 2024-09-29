@@ -14,7 +14,7 @@ export default function HomePage() {
 
   const fullText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
   const tokensPerWord = 1.3;
-  const tokensPerSecond = 10; // Changed from 15 to 10
+  const tokensPerSecond = 15; // This is now our base rate
   const wordsPerSecond = tokensPerSecond / tokensPerWord;
   const averageWordLength = 5; // Assuming an average word length of 5 characters
   const charactersPerSecond = wordsPerSecond * averageWordLength;
@@ -167,7 +167,7 @@ export default function HomePage() {
           .
         </p>
         <p>
-          Work in progress foundational technologies, designed for an intelligence age browser by{' '}
+          Work in progress, designed for an intelligence age browser by{' '}
           <a
             href="https://ankeshbharti.com/"
             target="_blank"
