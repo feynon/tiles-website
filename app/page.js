@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function HomePage() {
   const [isPaused, setIsPaused] = useState(true);
@@ -8,6 +8,17 @@ export default function HomePage() {
   const [activeTiles, setActiveTiles] = useState(0);
   const [displayNumber, setDisplayNumber] = useState(0);
   const [hasCompleted, setHasCompleted] = useState(false); // New state to track completion
+  const [streamingText, setStreamingText] = useState('');
+  const [shouldStartStreaming, setShouldStartStreaming] = useState(false);
+  const streamingIndexRef = useRef(0);
+
+  const fullText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
+  const tokensPerWord = 1.3;
+  const tokensPerSecond = 10; // Changed from 15 to 10
+  const wordsPerSecond = tokensPerSecond / tokensPerWord;
+  const averageWordLength = 5; // Assuming an average word length of 5 characters
+  const charactersPerSecond = wordsPerSecond * averageWordLength;
+  const animationInterval = 1000 / charactersPerSecond; // milliseconds per character
 
   useEffect(() => {
     let interval;
@@ -18,8 +29,9 @@ export default function HomePage() {
           setActiveTiles(Math.floor(newProgress / (100 / totalTiles)));
           
           if (newProgress === 100) {
-            setDisplayNumber(30);
-            setHasCompleted(true); // Mark as completed
+            setDisplayNumber(tokensPerSecond);
+            setHasCompleted(true);
+            setShouldStartStreaming(true);
           }
           
           return newProgress;
@@ -29,15 +41,37 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [isPaused, progress]);
 
+  useEffect(() => {
+    let intervalId;
+
+    if (shouldStartStreaming && !isPaused) {
+      const currentTokensPerSecond = displayNumber;
+      const currentWordsPerSecond = currentTokensPerSecond / tokensPerWord;
+      const currentCharactersPerSecond = currentWordsPerSecond * averageWordLength;
+      const currentAnimationInterval = 1000 / currentCharactersPerSecond;
+
+      intervalId = setInterval(() => {
+        setStreamingText(prev => {
+          const newText = prev + fullText[streamingIndexRef.current];
+          if (newText.length > 100) {
+            return newText.slice(1);
+          }
+          return newText;
+        });
+        streamingIndexRef.current = (streamingIndexRef.current + 1) % fullText.length;
+      }, currentAnimationInterval);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [shouldStartStreaming, isPaused, displayNumber]);
+
   const handleToggle = () => {
     setIsPaused(prevState => {
       const newPausedState = !prevState;
 
       if (!newPausedState && hasCompleted) {
-        // Resuming after completion: keep displayNumber at 30
-        setDisplayNumber(30);
+        setDisplayNumber(tokensPerSecond);
       } else if (newPausedState && hasCompleted) {
-        // Pausing after completion: reset displayNumber to 0
         setDisplayNumber(0);
       }
 
@@ -113,6 +147,11 @@ export default function HomePage() {
           aria-label={isPaused ? "Play button" : "Pause button"}
           onClick={handleToggle}
         ></button>
+        <div className="streaming-text-container">
+          <div className="streaming-text">
+            {streamingText}
+          </div>
+        </div>
       </main>
       <footer>
         <p>

@@ -24,6 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  position: relative; /* Add this */
 }
 .speed-display {
   font-size: 150px;
@@ -236,5 +237,52 @@ footer p {
 @media (max-width: 480px) {
   .progress-percentage {
     font-size: 22px; /* Increased font size for small screens */
+  }
+}
+
+.streaming-text-container {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  height: 1.5em; /* Changed from fixed height to relative */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.streaming-text {
+  font-size: 0.85rem;
+  max-width: 80%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+  opacity: 0.5;
+  color: #ff0000;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+}
+
+@media (max-width: 768px) {
+  .streaming-text-container {
+    bottom: 60px;
+  }
+  
+  .streaming-text {
+    font-size: 0.8rem; /* Slightly smaller font size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .streaming-text-container {
+    bottom: 50px;
+    height: 1.2em; /* Slightly reduce height for smaller screens */
+  }
+  
+  .streaming-text {
+    font-size: 0.75rem; /* Smaller font size for mobile */
+    max-width: 90%; /* Allow slightly more width on smaller screens */
   }
 }
