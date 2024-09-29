@@ -116,7 +116,7 @@ export default function HomePage() {
       </main>
       <footer>
         <p>
-          AI inference engine built with Rust, WebAssembly, and WebGPU, demoed
+        On-device AI inference engine built with Rust, WebAssembly, and WebGPU, demoed
           using{' '}
           <a
             href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
@@ -124,7 +124,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
           >
             Llama 3.2 3B
-          </a>{' '}
+          </a>{''}
           .
         </p>
         <p>
