@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Tiles: AI inference engine built with Rust, WebAssembly, and WebGPU,',
-  description: 'AI inference engine built with Rust, WebAssembly, and WebGPU, demoed using Llama 3.2 3B and Ratchet.Work in progress, designed by @feynon.',
+  title: 'Tiles: AI inference engine built with Rust, WebAssembly, and WebGPU',
+  description: 'AI inference engine built with Rust, WebAssembly, and WebGPU, demoed using Llama 3.2 3B and Ratchet. Work in progress, designed by @feynon.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
