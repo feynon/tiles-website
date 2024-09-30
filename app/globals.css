@@ -49,6 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 20px; /* Add margin to separate from streaming text */
 }
 .pause-button::before,
 .pause-button::after {
@@ -134,6 +135,7 @@ footer p {
   padding: 0;
   overflow: hidden;
   outline: none; /* Remove focus outline */
+  margin-bottom: 20px; /* Add margin to separate from streaming text */
 }
 
 .toggle-button:focus {
@@ -241,8 +243,8 @@ footer p {
 }
 
 .streaming-text-container {
-  position: absolute;
-  bottom: 80px;
+  position: relative; /* Changed from absolute to relative */
+  margin-top: 20px; /* Add margin to separate from button */
   left: 0;
   right: 0;
   height: 1.5em; /* Changed from fixed height to relative */
@@ -267,7 +269,7 @@ footer p {
 
 @media (max-width: 768px) {
   .streaming-text-container {
-    bottom: 60px;
+    margin-top: 10px; /* Adjust margin for medium screens */
   }
   
   .streaming-text {
@@ -277,12 +279,44 @@ footer p {
 
 @media (max-width: 480px) {
   .streaming-text-container {
-    bottom: 50px;
+    margin-top: 5px; /* Adjust margin for small screens */
     height: 1.2em; /* Slightly reduce height for smaller screens */
   }
   
   .streaming-text {
     font-size: 0.75rem; /* Smaller font size for mobile */
     max-width: 90%; /* Allow slightly more width on smaller screens */
+  }
+}
+
+/* Adjust the layout direction for smaller screens to align number and button horizontally */
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column; /* Ensure column layout */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .speed-display,
+  .unit {
+    margin: 0; /* Reset margins */
+    text-align: center;
+  }
+
+  .toggle-button {
+    margin-top: 10px; /* Add top margin for spacing */
+  }
+}
+
+/* Added responsive styles */
+@media (max-width: 800px) {
+  body {
+    font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+}
+
+@media (min-width: 3840px) {
+  body {
+    font-size: 18px; /* Adjust base font size for larger screens */
   }
 }
