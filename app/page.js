@@ -125,6 +125,19 @@ export default function HomePage() {
 
   const svgWidth = totalTiles * (tileSize + gap) + 50; // Increased width to accommodate percentage text
 
+  function setupStreamingText() {
+    const container = document.querySelector('.streaming-text-container');
+    if (container) {
+      // Ensure the container respects the CSS width and padding
+      container.style.width = '90%';
+      container.style.margin = '0 auto';
+      container.style.padding = '0 5%';
+    }
+  }
+
+  // Call the function to set up the streaming text
+  setupStreamingText();
+
   return (
     <>
       <header className="header">

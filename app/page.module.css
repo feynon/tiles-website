@@ -266,3 +266,10 @@ a.secondary {
     height: 60px;
   }
 }
+
+/* Streaming Text container adjustments */
+.streaming-text-container {
+    width: 90%; /* Use a percentage to make it responsive */
+    margin: 0 auto; /* Center the container and add whitespace on both sides */
+    padding: 0 5%; /* Add padding to ensure there's always some gap */
+}
