@@ -273,11 +273,3 @@ a.secondary {
     margin: 0 auto; /* Center the container and add whitespace on both sides */
     padding: 0 5%; /* Add padding to ensure there's always some gap */
 }
-
-/* Add media queries for smaller screens */
-@media (max-width: 600px) {
-  .streaming-text-container {
-    width: 100%; /* Use full width */
-    padding: 0 10px; /* Add padding to ensure there's always some gap */
-  }
-}
