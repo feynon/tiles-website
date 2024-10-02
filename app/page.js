@@ -166,19 +166,26 @@ export default function HomePage() {
       </main>
       <footer>
         <p>
-        On-device AI inference engine built with Rust, WebAssembly, and WebGPU, demoed
-          using{' '}
+        On-device AI inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
           <a
             href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Llama 3.2 3B
-          </a>{''}
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://github.com/huggingface/ratchet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ratchet
+          </a>
           .
         </p>
         <p>
-          Work in progress, designed for an intelligence age browser by{' '}
+          Work in progress, foundational technologies designed for an intelligence age browser by{' '}
           <a
             href="https://ankeshbharti.com/"
             target="_blank"
