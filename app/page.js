@@ -11,8 +11,7 @@ export default function HomePage() {
   const [streamingText, setStreamingText] = useState('');
   const [shouldStartStreaming, setShouldStartStreaming] = useState(false);
   const streamingIndexRef = useRef(0);
-
-  const fullText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
+  const fullText = 'Sanremo Music Festival (Festival di Sanremo) is an annual Italian music competition held in the city of Sanremo since 1951. It\'s considered one of the most prestigious and influential events in the Italian music scene. The festival features both newcomers and established artists competing for various awards, including the Big Award (Gran Premio), which grants the winner the right to represent Italy in the Eurovision Song Contest. The event consists of several live shows where artists perform their original songs, and a jury composed of musicians, critics, and the public determines the winners through a combination of points.';
   const tokensPerWord = 1.3;
   const tokensPerSecond = 15; // This is now our base rate
   const wordsPerSecond = tokensPerSecond / tokensPerWord;
