@@ -7,7 +7,7 @@ function MyDocument() {
         <title>Hello world</title>
         <meta
           property="og:image"
-          content="https://og-examples.vercel.sh/api/static"
+          content="https://www.tiles.run/api/og"
         />
         {/* ... other head elements ... */}
       </Head>
