@@ -1,1 +1,0 @@
-// 🚫 Remove this entire file to avoid importing `next/document` outside of `pages/_document.js`.
