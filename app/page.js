@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
 
 export default function HomePage() {
   const [isPaused, setIsPaused] = useState(true);
@@ -138,6 +139,10 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>Your Page Title</title>
+        {/* ... other head elements ... */}
+      </Head>
       <header className="header">
         <svg
           className="logo"
