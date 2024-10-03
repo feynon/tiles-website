@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Tiles',
-  description: 'On-device AI inference engine built with Rust, WebAssembly, and WebGPU. Work in progress, foundational technologies designed for an intelligence age browser.',
+  description: 'On-device AI inference engine built with Rust, WebAssembly, and WebGPU. Foundational technologies designed for an intelligence age browser.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
