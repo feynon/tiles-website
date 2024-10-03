@@ -139,13 +139,13 @@ export default function HomePage() {
 
   return (
     <>
-      <head>
+      <Head>
         <title>Tiles</title>
           <meta
             property="og:image"
             content="https://www.tiles.run/api/og"
           />
-      </head>
+      </Head>
       <header className="header">
         <svg
           className="logo"
