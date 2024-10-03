@@ -141,13 +141,6 @@ export default function HomePage() {
     <>
       <Head>
         <title>Tiles</title>
-        <meta
-          property="og:image"
-          content="https://www.tiles.run/api/og"
-        />
-        <meta property="og:type" content="website" /> {/* Added type */}
-        <meta property="og:title" content="Tiles" /> {/* Added title */}
-        <meta property="og:description" content="On-device AI inference engine built with Rust, WebAssembly, and WebGPU. Work in progress, foundational technologies designed for an intelligence age browser." /> {/* Added description */}
       </Head>
       <header className="header">
         <svg
