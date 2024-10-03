@@ -21,7 +21,7 @@ export default function HomePage() {
   const animationInterval = 1000 / charactersPerSecond; // milliseconds per character
   const title = "Tiles";
   const description = "On-device AI inference engine built with Rust, WebAssembly, and WebGPU. Work in progress, foundational technologies designed for an intelligence age browser.";
-  const ogImageUrl = `https://www.tiles.run/api/og?title=${encodeURIComponent(title)}`;
+  const ogImageUrl = `https://www.tiles.run/api/og`;
 
 
   useEffect(() => {
