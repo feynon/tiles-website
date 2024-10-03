@@ -140,8 +140,12 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Your Page Title</title>
+        <title>Tiles</title>
         {/* ... other head elements ... */}
+        <meta
+          property="og:image"
+          content="https://www.tiles.run/api/og"
+        />
       </Head>
       <header className="header">
         <svg
