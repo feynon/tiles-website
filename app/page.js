@@ -19,6 +19,10 @@ export default function HomePage() {
   const averageWordLength = 5; // Assuming an average word length of 5 characters
   const charactersPerSecond = wordsPerSecond * averageWordLength;
   const animationInterval = 1000 / charactersPerSecond; // milliseconds per character
+  const title = "Tiles";
+  const description = "On-device AI inference engine built with Rust, WebAssembly, and WebGPU. Work in progress, foundational technologies designed for an intelligence age browser.";
+  const ogImageUrl = `https://www.tiles.run/api/og?title=${encodeURIComponent(title)}`;
+
 
   useEffect(() => {
     let interval;
@@ -140,12 +144,21 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Tiles</title>
-        {/* ... other head elements ... */}
-        <meta
-          property="og:image"
-          content="https://www.tiles.run/api/og"
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        {/* OpenGraph Meta Tags */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tiles.run" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
       </Head>
       <header className="header">
         <svg
