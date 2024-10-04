@@ -6,13 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
+  padding: 30px; /* Increased from 20px */
   z-index: 1000;
 }
 
 .logo {
-  width: 40px;  /* Reduced from 50px */
-  height: 40px; /* Reduced from 50px */
+  width: 48px;  /* Increased from 40px */
+  height: 48px; /* Increased from 40px */
 }
 
 .logo svg {
@@ -21,7 +21,7 @@
 }
 
 .progress-bar-container {
-  width: 300px; /* Adjust this value as needed */
+  width: 350px; /* Increased from 300px */
 }
 
 .progressLogo {
@@ -32,30 +32,30 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
-    padding: 10px;
+    padding: 25px; /* Increased from 15px */
   }
 
   .logo {
-    width: 32px;  /* Reduced from 40px */
-    height: 32px; /* Reduced from 40px */
+    width: 40px;  /* Increased from 32px */
+    height: 40px; /* Increased from 32px */
   }
 
   .progress-bar-container {
-    width: 200px;
+    width: 250px; /* Increased from 200px */
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 5px;
+    padding: 20px; /* Increased from 10px */
   }
 
   .logo {
-    width: 24px;  /* Reduced from 30px */
-    height: 24px; /* Reduced from 30px */
+    width: 32px;  /* Increased from 24px */
+    height: 32px; /* Increased from 24px */
   }
 
   .progress-bar-container {
-    width: 150px;
+    width: 180px; /* Increased from 150px */
   }
 }
