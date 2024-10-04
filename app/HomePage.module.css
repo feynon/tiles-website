@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bar-container {
+  width: 300px; /* Adjust this value as needed */
+}
+
+.progressLogo {
+  width: 100%;
+  height: auto;
+}

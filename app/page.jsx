@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import styles from './HomePage.module.css';
 
 export default function HomePage() {
   const [isPaused, setIsPaused] = useState(true);
@@ -110,20 +111,20 @@ export default function HomePage() {
     tiles.push(
       <text
         key="percentage"
-        x={totalTiles * (tileSize + gap) + 10} // Increased space by 10px
+        x={totalTiles * (tileSize + gap) + 10}
         y={tileSize / 2}
         dy="0.35em"
         className="progress-percentage"
         textAnchor="start"
       >
-        {`${Math.round(progress)}`} {/* Removed the percentage symbol */}
+        {`${Math.round(progress)}`}
       </text>
     );
 
     return tiles;
   };
 
-  const svgWidth = totalTiles * (tileSize + gap) + 50; // Increased width to accommodate percentage text
+  const svgWidth = totalTiles * (tileSize + gap) + 50;
 
   useEffect(() => {
     function setupStreamingText() {
@@ -142,15 +143,29 @@ export default function HomePage() {
       <Head>
         <title>Tiles</title>
       </Head>
-      <header className="header">
-        <svg
-          className="logo"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={`0 0 ${svgWidth} ${tileSize}`}
-          aria-label="Download Progress"
-        >
-          <g>{generateTiles()}</g>
-        </svg>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="256" height="256" viewBox="0 0 256.000000 256.000000"
+            preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
+            fill="#F00" stroke="none">
+              <path d="M0 2135 l0 -425 855 0 855 0 0 -430 0 -430 425 0 425 0 0 430 0 430
+              -425 0 -425 0 0 425 0 425 -855 0 -855 0 0 -425z"/>
+              <path d="M0 425 l0 -425 430 0 430 0 0 425 0 425 -430 0 -430 0 0 -425z"/>
+            </g>
+          </svg>
+        </div>
+        <div className={styles['progress-bar-container']}>
+          <svg
+            className={styles.progressLogo}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={`0 0 ${svgWidth} ${tileSize}`}
+            aria-label="Download Progress"
+          >
+            <g>{generateTiles()}</g>
+          </svg>
+        </div>
       </header>
       <main className="content">
         <div className="speed-display" aria-label="Token processing speed">
