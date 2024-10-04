@@ -82,9 +82,28 @@ export default function HomePage() {
     console.log(isPaused ? 'Resumed' : 'Paused');
   };
 
+  const [tileSize, setTileSize] = useState(28);
+  const [gap, setGap] = useState(2);
   const totalTiles = 10;
-  const tileSize = 28;
-  const gap = 2;
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 480) {
+        setTileSize(18);
+        setGap(1);
+      } else if (window.innerWidth <= 768) {
+        setTileSize(22);
+        setGap(1);
+      } else {
+        setTileSize(28);
+        setGap(2);
+      }
+    }
+
+    handleResize(); // Call once to set initial size
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const generateTiles = () => {
     const tiles = [];
