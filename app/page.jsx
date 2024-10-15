@@ -215,7 +215,7 @@ export default function HomePage() {
           .
         </p>
         <p>
-          Work in progress, foundational technologies designed for an intelligence age browser.{' '}
+          Demo in progress, foundational technologies designed for an intelligence age browser.{' '}
           <a
             href="https://ankeshbharti.com/stories/the-new-intelligence"
             target="_blank"
