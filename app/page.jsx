@@ -212,10 +212,18 @@ export default function HomePage() {
           >
             Llama 3.2 3B
           </a>
-          .
+          {' '}and conformant{' '}
+          <a
+            href="https://llama-stack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Llama Stack API{' '} 
+          </a>
+          spec.
         </p>
         <p>
-          Demo in progress, foundational technologies designed for an intelligence age browser.{' '}
+        Tiles is a collection of prototypical artifacts designed for an intelligence-age browser.{' '}
           <a
             href="https://ankeshbharti.com/stories/the-new-intelligence"
             target="_blank"
