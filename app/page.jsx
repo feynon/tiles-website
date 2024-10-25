@@ -220,10 +220,10 @@ export default function HomePage() {
           >
             Llama Stack API{' '} 
           </a>
-          spec. Currently a WIP, the project is not yet functional.
+          spec.
         </p>
         <p>
-        Tiles is a collection of prototypical artifacts designed for an intelligence-age browser.{' '}
+        Tiles is a collection of prototypical artifacts designed for an intelligence-age browser. Currently a WIP, the project is not yet functional.{' '}
           <a
             href="https://ankeshbharti.com/stories/the-new-intelligence"
             target="_blank"
