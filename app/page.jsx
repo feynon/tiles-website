@@ -206,15 +206,15 @@ export default function HomePage() {
         <p>
         On-device AI inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
           <a
-            href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
+            href="https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Llama 3.2 3B
+            Llama 3.2 3B SpinQuant
           </a>
           {' '}and conformant{' '}
           <a
-            href="https://llama-stack.com"
+            href="https://github.com/meta-llama/llama-stack"
             target="_blank"
             rel="noopener noreferrer"
           >
