@@ -220,7 +220,7 @@ export default function HomePage() {
           >
             Llama Stack API{' '} 
           </a>
-          spec.
+          spec. Currently a WIP, the project is not yet functional.
         </p>
         <p>
         Tiles is a collection of prototypical artifacts designed for an intelligence-age browser.{' '}
