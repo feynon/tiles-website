@@ -204,7 +204,7 @@ export default function HomePage() {
       </main>
       <footer>
         <p>
-        On-device AI inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
+        On-device ML inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
           <a
             href="https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/"
             target="_blank"
