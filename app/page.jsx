@@ -212,7 +212,7 @@ export default function HomePage() {
           >
             Llama 3.2 3B SpinQuant
           </a>
-          {' '}and conformant{' '}
+          {' '}, conformant with{' '}
           <a
             href="https://github.com/meta-llama/llama-stack"
             target="_blank"
