@@ -206,7 +206,7 @@ export default function HomePage() {
         <p>
         On-device ML inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
           <a
-            href="https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/"
+            href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
             target="_blank"
             rel="noopener noreferrer"
           >
