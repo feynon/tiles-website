@@ -204,7 +204,15 @@ export default function HomePage() {
       </main>
       <footer>
         <p>
-        On-device ML inference engine built with Rust, WebAssembly, and WebGPU, conformant with{' '}
+        On-device ML inference engine built with Rust, WebAssembly, and WebGPU, demoed using{' '}
+          <a
+            href="https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Llama 3.2 1B
+          </a>
+          , conformant with{' '}
           <a
             href="https://github.com/meta-llama/llama-stack"
             target="_blank"
